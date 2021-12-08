@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodchain by blockchain</title>
+    <!-- CSS -->
+    
+    <link rel="stylesheet" href="css/maps.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+</head>
+<body id="body-pd">
+<div class="body-wrapper">
+    <div class="header-wrapper">
+        <header class="header" id="header">
+            <div class="header_toggle"> 
+                <i class='fas fa-bars' id="header-toggle"></i> 
+            </div>
+            <div class="input-group">
+                <div class="form-outline">
+                  <input id="search-input" type="search" id="form1" class="form-control" />
+                </div>
+                <button id="search-button" type="button" class="btn btn-primary">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            <div class="header_img"> 
+                <img src="img/profile-holder.png" alt=""> 
+            </div>
+        </header>
+        <div class="l-navbar" id="nav-bar">
+            <nav class="nav">
+                <div> 
+                    <a href="#" class="nav_logo"> 
+                        <img src="img/logo-white.png" alt="Logo"> 
+                        <img src="img/brand-white.png" alt="Logo"> 
+                    </a>
+                    <div class="nav_list"> 
+                        <a href="index.html" class="nav_link"> 
+                            <i class='fas fa-home nav_icon'></i>
+                            <span class="nav_name">Dashboard</span> 
+                        </a> 
+                        <a href="products.html" class="nav_link active"> 
+                            <i class='fas fa-border-all nav_icon'></i> 
+                            <span class="nav_name">Products</span> 
+                        </a> 
+                        <a href="profile.html" class="nav_link"> 
+                            <i class='fas fa-border-all nav_icon'></i> 
+                            <span class="nav_name">My Buisness</span> 
+                        </a>
+                    </div>
+                </div> 
+                <a href="#" class="nav_link"> <i class='fa fa-sign-out fa-flip-horizontal nav_icon'></i> <span class="nav_name">Sign Out</span> </a>
+            </nav>
+        </div>
+    </div>
+        <!--Container Main start-->
+        <div class="content">
+            <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                  <li class="breadcrumb-item"><a href="index.html"><i class="fas fa-home"></i></a></li>
+                  <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">/ Add Product</li>
+                </ol>
+              </nav>
+            <div class="page-title">
+                <h5>Add Product</h5>
+            </div>
+            <div id="accordion">
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="card-title">Product Name</h6>
+                        <label class="switch">
+                            <input type="checkbox" data-bs-toggle="collapse" href="#collapseOne">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div id="collapseOne" class="collapse">
+                        <div class="card-body">
+                            <input type="text" placeholder="Product Name...">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="card-title">Weight/Volume</h6>
+                        <label class="switch">
+                            <input type="checkbox" data-bs-toggle="collapse" href="#collapseTen">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div id="collapseTen" class="collapse">
+                        <div class="card-body">
+                            <input type="text" placeholder="Weight/Volume...">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="card-title">Ingredients</h6>
+                        <label class="switch">
+                            <input type="checkbox" data-bs-toggle="collapse" href="#collapseEight">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div id="collapseEight" class="collapse">
+                        <div class="card-body">
+                            <form class="col-md-4 add-ingredient">
+                                <label>Add Ingredient</label>
+                                <select class="form-control select2">
+                                <option>Choose...</option> 
+                                <option>Ingredient 1</option> 
+                                <option>Ingredient 2</option> 
+                                <option>Ingredient 3</option> 
+                                <option>Ingredient 4</option> 
+                                <option>Ingredient 5</option> 
+                                </select>
+                            </form>
+                            <div class="table-responsive">
+                                <div class="table-wrapper">
+                                    <!-- <div class="table-title">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="search-box">
+                                                    <input type="text" class="form-control" placeholder="Search&hellip;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    <table class="table table-striped table-hover table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Name <i class="fa fa-sort"></i></th>
+                                                <th>Producer <i class="fa fa-sort"></i></th>
+                                                <th>Show producer on consumer page?</i></th>
+                                                <th>Delete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Ingredient 1</td>
+                                                <td>Producer 1</td>
+                                                <td class="checkbox" ><input type="checkbox" checked></td>
+                                                <td>
+                                                    <a href="#" class="delete" ><i class="fas fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Ingredient 2</td>
+                                                <td>Producer 2</td>
+                                                <td><input type="checkbox" class="checkbox" checked></td>
+                                                <td>
+                                                    <a href="#" class="delete" ><i class="fas fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Ingredient 3</td>
+                                                <td>Producer 3</td>
+                                                <td><input type="checkbox" class="checkbox" checked></td>
+                                                <td>
+                                                    <a href="#" class="delete" ><i class="fas fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="clearfix">
+                                        <ul class="pagination">
+                                            <li class="page-item  active"><a href="#" class="page-link">1</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="card-title">Product Images</h6>
+                        <label class="switch">
+                            <input type="checkbox" data-bs-toggle="collapse" href="#collapseTwo">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div id="collapseTwo" class="collapse">
+                        <div class="card-body">
+                            <div class="mb-5">
+                                <input class="form-control" type="file" id="formFile" onchange="preview()">
+                            </div>
+                            <img id="frame" src="" class="img-fluid" />
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="card-title">Accreditation Code</h6>
+                        <label class="switch">
+                            <input type="checkbox" data-bs-toggle="collapse" href="#collapseThree">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div id="collapseThree" class="collapse">
+                        <div class="card-body">
+                            <input type="text" placeholder="Accreditation Code...">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="card-title">Product Description</h6>
+                        <label class="switch">
+                            <input type="checkbox" data-bs-toggle="collapse" href="#collapseFour">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div id="collapseFour" class="collapse">
+                        <div class="card-body">
+                            <textarea placeholder="Product Description..."></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="card-title">Business Description</h6>
+                        <label class="switch">
+                            <input type="checkbox" data-bs-toggle="collapse" href="#collapseFive">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div id="collapseFive" class="collapse">
+                        <div class="card-body">
+                            <textarea placeholder="Business Description..."></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="card-title">Business Images</h6>
+                        <label class="switch">
+                            <input type="checkbox" data-bs-toggle="collapse" href="#collapseSix">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div id="collapseSix" class="collapse">
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-2 imgUp">
+                                        <div class="imagePreview"></div>
+                                        <label class="btn btn-primary">
+                                            Upload
+                                            <input type="file" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;">
+                                        </label>
+                                    </div><!-- col-2 -->
+                                    <i class="fa fa-plus imgAdd"></i>
+                                </div><!-- row -->
+                            </div><!-- container -->
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="card-title">Business Adress</h6>
+                        <label class="switch">
+                            <input type="checkbox" data-bs-toggle="collapse" href="#collapseSeven">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div id="collapseSeven" class="collapse">
+                        <div class="card-body">
+                            <div class="card-container">
+                                <div class="panel">
+                                  <div>
+                                    <img class="sb-title-icon" src="https://fonts.gstatic.com/s/i/googlematerialicons/location_pin/v5/24px.svg" alt="">
+                                    <span class="sb-title">Address Selection</span>
+                                  </div>
+                                  <input type="text" placeholder="Address" id="location"/>
+                                  <div class="half-input-container">
+                                    <input type="text" class="half-input" placeholder="State/Province" id="administrative_area_level_1"/>
+                                    <input type="text" class="half-input" placeholder="Zip/Postal code" id="postal_code"/>
+                                  </div>
+                                  <input type="text" placeholder="Country" id="country"/>
+                                </div>
+                                <div class="map" id="map"></div>
+                              </div>
+                              <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiDS_zzuWK486ZHixDMQdbAqS5N5Ba-HY&libraries=places&callback=initMap&solution_channel=GMP_QB_addressselection_v1_cABC" async defer></script>
+                            </body>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="card-title">Business Website</h6>
+                        <label class="switch">
+                            <input type="checkbox" data-bs-toggle="collapse" href="#collapseNine">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div id="collapseNine" class="collapse">
+                        <div class="card-body">
+                            <input type="text" placeholder="Business Website...">
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary btn-lg save-btn">Save</button>
+            </div>
+        </div>
+        <!--Container Main end-->
+
+</div>
+
+
+
+<script>
+    $('.select2').select2();
+</script>
+</body>
+</html>
+
+
